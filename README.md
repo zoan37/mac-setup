@@ -11,8 +11,8 @@ on or off, and comes back in that state after a reboot.
 | Click the mug | Toggle stay-awake |
 | Right-click (or control-click) the mug | Menu: toggle, Open at Login, Quit |
 
-- **Full mug**: stay-awake is ON. The Mac will not sleep, dim, or start the screensaver from inactivity.
-- **Dim, empty mug**: OFF. Normal macOS sleep settings apply.
+- **Full mug with steam**: stay-awake is ON. The Mac will not sleep, dim, or start the screensaver from inactivity.
+- **Dim, empty mug with no steam**: OFF. Normal macOS sleep settings apply.
 
 First launch defaults to ON. The choice is saved on every toggle and re-applied at
 launch, and the app registers itself as a login item the first time it runs from an
@@ -83,6 +83,7 @@ and clears the saved state (`defaults delete com.zoan.StayAwake`).
 Sources/StayAwake/
   main.swift             entry point and the --flag command line
   AppDelegate.swift      the menu-bar item, clicks, and menu
+  MugIcon.swift          the hand-drawn mug-and-steam menu-bar glyph
   PowerAssertions.swift  the four IOKit assertions
   LoginItem.swift        Open at Login (SMAppService)
   Preferences.swift      saved on/off choice (UserDefaults)

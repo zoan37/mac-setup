@@ -49,13 +49,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private func refreshIcon() {
         guard let button = statusItem.button else { return }
         let on = assertions.isHeld
-        let image = NSImage(
-            systemSymbolName: on ? "mug.fill" : "mug",
-            accessibilityDescription: on ? "Stay Awake is on" : "Stay Awake is off"
-        )
-        image?.isTemplate = true
+        let image = MugIcon.image(steaming: on)
+        image.accessibilityDescription = on ? "Stay Awake is on" : "Stay Awake is off"
         button.image = image
-        button.appearsDisabled = !on  // dim the empty mug
+        button.appearsDisabled = !on  // dim the cold, empty mug
         button.toolTip = on
             ? "Stay Awake is on — click to allow sleep"
             : "Stay Awake is off — click to keep this Mac awake"
