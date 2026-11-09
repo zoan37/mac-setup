@@ -51,11 +51,11 @@ enum MugIcon {
     private static func steam() -> NSBezierPath {
         let path = NSBezierPath()
         for x in [4.4, 7.25, 10.1] {
-            path.move(to: NSPoint(x: x, y: 12.3))
+            path.move(to: NSPoint(x: x, y: 12.0))
             path.curve(
-                to: NSPoint(x: x, y: 17.2),
-                controlPoint1: NSPoint(x: x + 1.8, y: 13.9),
-                controlPoint2: NSPoint(x: x - 1.8, y: 15.6)
+                to: NSPoint(x: x, y: 15.2),
+                controlPoint1: NSPoint(x: x + 1.8, y: 13.05),
+                controlPoint2: NSPoint(x: x - 1.8, y: 14.15)
             )
         }
         path.lineWidth = 1.2
